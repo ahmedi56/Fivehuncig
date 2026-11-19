@@ -1,0 +1,51 @@
+:root {
+  --font-display:
+    Spline Sans, Inter, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  /* No CJK fallbacks here: on Windows they render Latin punctuation full-width ("C’ est"). */
+  --font-rounded: ui-rounded, 'SF Pro Rounded', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+}
+
+/*
+ * One keyboard focus ring for every control on web (buttons, rows, chips, tabs, links, fields).
+ * :focus-visible = keyboard focus only, so taps and clicks show nothing. Same colour as `sky` in
+ * src/theme.ts (3:1 or more against every background). Containers that only receive focus
+ * programmatically (tabindex="-1") are not matched.
+ */
+:root {
+  --focus-ring: #538ca9;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-ring: #86c1de;
+  }
+}
+[role='button']:focus-visible,
+[role='tab']:focus-visible,
+[role='link']:focus-visible,
+[role='radio']:focus-visible,
+[role='checkbox']:focus-visible,
+[role='switch']:focus-visible,
+a[href]:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Page background before the app renders (same as `air` in src/theme.ts), chosen by the browser
+   itself so dark mode never flashes light while loading. */
+html,
+body {
+  background-color: #eef3f1;
+}
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: #0f1a1c;
+  }
+}

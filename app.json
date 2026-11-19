@@ -1,0 +1,75 @@
+{
+  "expo": {
+    "name": "FivehunCig",
+    "slug": "fivehuncig",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "fivehuncig",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.fivehuncig.app",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Add a photo to your reasons wall. Photos stay on your phone."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#1B2A33",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.fivehuncig.app",
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "output": "server",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#EEF3F1",
+          "image": "./assets/images/logo.png",
+          "imageWidth": 200,
+          "dark": {
+            "backgroundColor": "#0F1A1C"
+          }
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#2F7D6D"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Add a photo to your reasons wall. Photos stay on your phone.",
+          "cameraPermission": false,
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-localization",
+        {
+          "supportsRTL": false
+        }
+      ],
+      "expo-video"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "description": "Quit smoking, even if you are not ready. Cut down slowly with the Next Cigarette Timer."
+  }
+}
